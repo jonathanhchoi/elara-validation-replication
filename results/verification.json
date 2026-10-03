@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "terminal_codings": 4200,
+  "unique_items": 300,
+  "runs": 4,
+  "bootstrap_resamples_per_contrast": 2000,
+  "bootstrap_contrasts_per_run": 2,
+  "export_files_verified": 50,
+  "all_archived_agreement_and_inference_fields_match": true,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "jsonschema": "4.24.0",
+  "api_calls_made": 0,
+  "archive_files_verified": 10680,
+  "api_cost_usd_by_vendor": {
+    "anthropic": 36.495965,
+    "openai": 15.1375575
+  }
+}

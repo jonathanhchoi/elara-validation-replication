@@ -1,0 +1,27 @@
+{
+  "authorization_version": "v001",
+  "authorizer": "Researcher (Jonathan H. Choi)",
+  "constraints": [
+    "minimized derivatives only; raw documents and OCR remain local",
+    "development-phase items; confirmatory reuse requires a new authorization"
+  ],
+  "covered_material_ids": [
+    "clark_civil_settlement_motion_v001",
+    "clark_civil_settlement_proposed_order_v001",
+    "clark_probate_petition_v001",
+    "clark_probate_witness_affidavit_v001",
+    "clark_probate_order_v001"
+  ],
+  "covered_routes": [
+    "api",
+    "subagent"
+  ],
+  "decision_date": "2026-08-04",
+  "decision_provenance": "Researcher decision recorded in the 2026-08-04 revision session: Clark materials authorized for use and hosted transmission on both routes, responding to audit decision item 5 (de-identification review, task-fidelity review, route-neutral transmission gate).",
+  "scope": [
+    "deidentification_review",
+    "task_fidelity_review",
+    "hosted_transmission"
+  ],
+  "source_id": "clark_county_judicial_documents_pilot_v001"
+}

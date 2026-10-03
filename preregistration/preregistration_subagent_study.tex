@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+\title{Preregistration: A Validation Study of Scaffolded Sub-Agent Coding\\ for Empirical Legal Data Generation}
+\author{Jonathan H. Choi\thanks{James Carr Professor of Law, Washington University School of Law.}}
+\date{August 5, 2026 \\[2pt] \normalsize Version 1.0}
+
+\begin{document}
+\maketitle
+
+\section{Purpose of this document}
+
+This document preregisters the design of a study comparing two ways of using a hosted large language model to code legal text into structured data: direct, stateless API calls, and native sub-agents spawned by an agentic coding tool under a scaffold that assigns one observation per fresh context. The study accompanies \textit{ELARA: A Framework for Empirical Legal Research with AI Agents}.
+
+\section{Research questions}
+
+\begin{enumerate}
+\item \textbf{Reproducibility.} Across a prespecified mixture of empirical-legal-research coding tasks, does agreement among independent sub-agent codings of the same item differ from agreement among independent API codings---and in particular, does it fall short?
+\item \textbf{Quality.} When the two methods disagree, which is right? This is answered with independently audited gold labels where an objective answer exists, and blind human review where reasonable people may disagree.
+\end{enumerate}
+
+Agreement between a random API--sub-agent pair, and a related measure of systematic drift between the methods, are estimated as prespecified companions to the primary contrast (Section~\ref{sec:secondary}).
+
+\section{Design overview}
+
+For each item $i$, the study collects $R_A \geq 2$ independent API codings and $R_S \geq 2$ independent sub-agent codings. Every coding begins in a fresh context and receives the same frozen package: coder instructions and response schema, the item identifier and instruction, the ordered materials, the question, and the ordered permissible labels. Neither method may add anything substantive. Sub-agents read only their own assignment and write only their own result file; a parent process validates and combines results serially.
+
+Models are matched within vendor family---sub-agents from an agentic coding product are compared against direct API calls to the same vendor's underlying model---and each vendor pair is analyzed separately. At registration, the intended pairs are Claude Code against the Anthropic API (Claude Opus 5) and Codex against the OpenAI API (GPT-5.6 Sol); the study may run one or both pairs, and conclusions attach to the pair(s) actually run. Both methods run at provider-default settings. Assignments launch in an order randomized within short time windows so that neither method is bunched in time. Each attempt's model identifiers, timestamps, retries, and a fingerprint of the exact package sent are logged, and raw outputs are archived.
+
+The treatment is the end-to-end coding method as deployed. The products add hidden instructions, tool scaffolds, and sampling choices the researcher cannot fully observe, so the study does not claim the two methods make identical requests, and it does not estimate the causal contribution of any single scaffold component.
+
+\section{Task population}
+
+The confirmatory population is a frozen pool of coding items constructed for this study, with target family weights as follows:
+
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{lr}
+\toprule
+Task family & Target share \\
+\midrule
+Opinion-feature presence & 15\% \\
+Interpretive-move coding & 15\% \\
+Structured-value extraction & 15\% \\
+Contract-clause coding & 10\% \\
+Judicial-document role & 10\% \\
+Cross-document relations & 10\% \\
+Statutory entailment & 10\% \\
+Interpretive application & 15\% \\
+\bottomrule
+\end{tabular}
+\end{footnotesize}
+\end{center}
+
+The first six families measure variables in supplied legal documents; statutory entailment is a controlled objective reasoning check; interpretive application consists of newly written, genuinely subjective scenarios with no gold label. Document-based items use recent court filings and similar materials that are public records but unlikely to appear in model training corpora; objective items use post-cutoff documents or newly generated templates whose answers can be established mechanically; subjective items use newly written scenarios rather than famous hypotheticals. Items seen during instrument development or piloting, and any item seen while revising a prompt, are permanently excluded from the confirmatory pool.
+
+\section{Primary estimand and decision rules}
+
+Let $A_{ia}$ denote API coding $a$ of item $i$ and $S_{is}$ sub-agent coding $s$. Define $g(x,y)=1$ only when both codings finish, pass the format check, and assign the same label; otherwise $g(x,y)=0$. Malformed, refused, or missing codings remain in the denominator. For each item:
+\begin{align*}
+AA_i &= \binom{R_A}{2}^{-1}\sum_{a<b} g(A_{ia},A_{ib}), &
+AS_i &= (R_A R_S)^{-1}\sum_a\sum_s g(A_{ia},S_{is}),\\
+SS_i &= \binom{R_S}{2}^{-1}\sum_{s<t} g(S_{is},S_{it}), &
+d_i  &= SS_i-AA_i.
+\end{align*}
+With $D_f$ the mean of $d_i$ over family $f$ and $w_f$ the target weights above, the primary estimand is
+\[
+\Delta_{\mathrm{overall}}=\sum_f w_f D_f,
+\]
+computed separately for each vendor pair. A negative value means the sub-agent method is less internally reproducible than the API method on this workload.
+
+\textbf{Hypotheses and tests.} The primary null is $H_0:\Delta_{\mathrm{overall}}=0$, tested two-sided at the 5\% level. A separate equivalence test asks whether any difference is small enough to treat the methods as practically similar, using two one-sided tests: equivalence is declared only if the 90\% confidence interval lies wholly inside a prespecified margin.
+
+\textbf{Inference.} The unit of analysis is the item. Related items (those drawn from the same filing or built from the same template) are likely to agree or disagree together, so the analysis treats each such group, rather than each item or each pair of codings, as one independent piece of evidence. The interval and test procedure is a stratified cluster bootstrap.
+
+\textbf{Denominators.} Because $g$ counts a failure as disagreement, it mixes label reproducibility with operational reliability. The analysis therefore reports both the share of valid codings and the agreement rate among pairs where both codings are valid.
+
+\section{Secondary outcomes}
+\label{sec:secondary}
+
+Prespecified secondary outcomes are the overall and family-specific $AS-AA$ contrasts; the drift measure $AA_i+SS_i-2AS_i$, which averages to zero when the two methods draw from the same distribution and grows as they systematically diverge; the label distribution each method produces, with total-variation and Jensen--Shannon distances on the intensive panel; chance-corrected agreement statistics; evidence-citation agreement; and failure, latency, token-use, and cost profiles. Rationale similarity and shared wrong labels are examined as symptoms of correlated error. Any analysis not listed in this registration or its amendments will be labeled exploratory.
+
+\section{Quality analysis}
+
+Objective families receive gold labels audited by a human coder. For the disagreement review: each method's answer for an item is the label most of its codings gave; when the two methods' answers differ, or a method produced no valid coding, the item goes to blind human review. Candidates are re-rendered in a uniform template, stripped of method identity, coding counts, and formatting, and presented in randomized order; the reviewer selects the correct label or marks the item indeterminate under the codebook.
+
+\end{document}

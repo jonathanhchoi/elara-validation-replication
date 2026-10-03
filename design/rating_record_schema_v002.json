@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Route-agreement rating record v0.02",
+  "description": "One terminal coding attempt outcome per planned draw slot. General R >= 2 repeats per route; provenance and prompt hashes are required so every record can be re-verified against the frozen envelope.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "record_version",
+    "comparison",
+    "item_id",
+    "route",
+    "coder_rep",
+    "attempt",
+    "terminal_status",
+    "label",
+    "prompt_sha256",
+    "response_schema_sha256",
+    "requested_model",
+    "reported_model",
+    "timestamp_utc",
+    "block",
+    "raw_archive_path"
+  ],
+  "properties": {
+    "record_version": { "const": "0.2" },
+    "comparison": { "enum": ["anthropic", "openai"] },
+    "item_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,79}$" },
+    "route": { "enum": ["api", "subagent"] },
+    "coder_rep": { "type": "integer", "minimum": 1 },
+    "attempt": { "type": "integer", "minimum": 1, "maximum": 2 },
+    "terminal_status": {
+      "enum": ["succeeded", "parse_failure", "refused", "transport_error", "terminal_failure"]
+    },
+    "label": { "type": ["string", "null"], "minLength": 1, "maxLength": 200 },
+    "evidence_ids": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "maxItems": 12
+    },
+    "rationale": { "type": ["string", "null"], "maxLength": 4000 },
+    "prompt_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "response_schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "requested_model": { "type": "string", "minLength": 1 },
+    "reported_model": { "type": ["string", "null"] },
+    "reported_model_verified": { "type": "boolean" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "block": { "type": "integer", "minimum": 0 },
+    "latency_ms": { "type": ["number", "null"], "minimum": 0 },
+    "usage": { "type": ["object", "null"] },
+    "error": { "type": ["string", "null"], "maxLength": 2000 },
+    "raw_archive_path": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "terminal_status": { "const": "succeeded" } } },
+      "then": {
+        "properties": {
+          "label": { "type": "string" },
+          "error": { "type": "null" }
+        }
+      },
+      "else": {
+        "properties": {
+          "label": { "type": "null" },
+          "error": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ]
+}

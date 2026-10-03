@@ -1,0 +1,106 @@
+{
+  "authorized_restricted_items": {
+    "dev_clark_extract_001": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_extract_002": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_extract_003": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_relation_001": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_relation_002": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_role_001": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_role_002": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    },
+    "dev_clark_role_003": {
+      "authorization_path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources\\clark_county_pilot_v001\\authorization_v001.json",
+      "covered_routes": [
+        "api",
+        "subagent"
+      ],
+      "source_id": "clark_county_judicial_documents_pilot_v001"
+    }
+  },
+  "blocks": 10,
+  "budget_plan": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\budget_plan_v004.json",
+    "sha256": "9962c20d73ac2b27f0340ce2f7e83e5bedddf99c8c8bc0f981d81e14a15d0988"
+  },
+  "comparison": "openai",
+  "design_spec": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\task_family_spec_v004.json",
+    "sha256": "9a3dafd574933c5671dad16b3974cd47cfc1941191d1c5fc20c4f97e8c8eb656"
+  },
+  "envelopes": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\diversity_objective_envelopes_v003.jsonl",
+    "sha256": "262ce4433f2a6c7d32c10b9b91a4252724cc0600bb725c031af4707210fe7c5b"
+  },
+  "est_input_tokens": 3000,
+  "est_output_tokens": 600,
+  "items": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\diversity_objective_panel_v003.jsonl",
+    "sha256": "9c6a55e864a76fbc821a042b714666bb4282393f28a0a236c1498c9120b7ae86"
+  },
+  "models": {
+    "api_model": "gpt-5.6-sol",
+    "subagent_requested_model": "gpt-5.6-sol",
+    "subagent_route": "codex_subagent"
+  },
+  "price_key": "openai_gpt-5.6-sol",
+  "rating_schema": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\rating_record_schema_v002.json",
+    "sha256": "b7d50d92debbef5c69174057b804d9c629c78302e1627814247e6e462ec9b200"
+  },
+  "reasoning_effort": "high",
+  "reps": {
+    "api": 2,
+    "subagent": 2
+  },
+  "seed": 20260812,
+  "sources_root": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources",
+  "stage": "diversity_pilot"
+}

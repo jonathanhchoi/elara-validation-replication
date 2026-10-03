@@ -1,0 +1,22 @@
+{
+  "diversity_interpretive_anthropic_v001": {
+    "files": 2802,
+    "zip_bytes": 7561557,
+    "redacted_files": 0
+  },
+  "diversity_interpretive_openai_v001": {
+    "files": 2716,
+    "zip_bytes": 6825645,
+    "redacted_files": 0
+  },
+  "diversity_objective_anthropic_v001": {
+    "files": 2587,
+    "zip_bytes": 6839002,
+    "redacted_files": 8
+  },
+  "diversity_objective_openai_v001": {
+    "files": 2575,
+    "zip_bytes": 5985009,
+    "redacted_files": 8
+  }
+}

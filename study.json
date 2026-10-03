@@ -1,0 +1,130 @@
+{
+  "release_date": "2026-10-03",
+  "title": "ELARA validation study replication materials",
+  "runs": [
+    {
+      "run_id": "diversity_interpretive_anthropic_v001",
+      "panel": "interpretive",
+      "comparison": "anthropic",
+      "seed": 20260813,
+      "reps": {
+        "api": 12,
+        "subagent": 12
+      },
+      "models": {
+        "api_model": "claude-opus-5",
+        "subagent_requested_model": "opus",
+        "subagent_route": "claude_code_subagent"
+      },
+      "reasoning_effort": "high",
+      "price_key": "anthropic_claude-opus-5",
+      "historical_stage": "diversity_pilot",
+      "expected_by_route": {
+        "api": 540,
+        "subagent": 540
+      },
+      "expected_status_counts": {
+        "api": {
+          "parse_failure": 31,
+          "succeeded": 508,
+          "transport_error": 1
+        },
+        "subagent": {
+          "parse_failure": 2,
+          "succeeded": 538
+        }
+      }
+    },
+    {
+      "run_id": "diversity_interpretive_openai_v001",
+      "panel": "interpretive",
+      "comparison": "openai",
+      "seed": 20260813,
+      "reps": {
+        "api": 12,
+        "subagent": 12
+      },
+      "models": {
+        "api_model": "gpt-5.6-sol",
+        "subagent_requested_model": "gpt-5.6-sol",
+        "subagent_route": "codex_subagent"
+      },
+      "reasoning_effort": "high",
+      "price_key": "openai_gpt-5.6-sol",
+      "historical_stage": "diversity_pilot",
+      "expected_by_route": {
+        "api": 540,
+        "subagent": 540
+      },
+      "expected_status_counts": {
+        "api": {
+          "succeeded": 540
+        },
+        "subagent": {
+          "succeeded": 540
+        }
+      }
+    },
+    {
+      "run_id": "diversity_objective_anthropic_v001",
+      "panel": "objective",
+      "comparison": "anthropic",
+      "seed": 20260812,
+      "reps": {
+        "api": 2,
+        "subagent": 2
+      },
+      "models": {
+        "api_model": "claude-opus-5",
+        "subagent_requested_model": "opus",
+        "subagent_route": "claude_code_subagent"
+      },
+      "reasoning_effort": "high",
+      "price_key": "anthropic_claude-opus-5",
+      "historical_stage": "diversity_pilot",
+      "expected_by_route": {
+        "api": 510,
+        "subagent": 510
+      },
+      "expected_status_counts": {
+        "api": {
+          "parse_failure": 6,
+          "succeeded": 504
+        },
+        "subagent": {
+          "succeeded": 510
+        }
+      }
+    },
+    {
+      "run_id": "diversity_objective_openai_v001",
+      "panel": "objective",
+      "comparison": "openai",
+      "seed": 20260812,
+      "reps": {
+        "api": 2,
+        "subagent": 2
+      },
+      "models": {
+        "api_model": "gpt-5.6-sol",
+        "subagent_requested_model": "gpt-5.6-sol",
+        "subagent_route": "codex_subagent"
+      },
+      "reasoning_effort": "high",
+      "price_key": "openai_gpt-5.6-sol",
+      "historical_stage": "diversity_pilot",
+      "expected_by_route": {
+        "api": 510,
+        "subagent": 510
+      },
+      "expected_status_counts": {
+        "api": {
+          "succeeded": 510
+        },
+        "subagent": {
+          "succeeded": 510
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "spec_version": "0.4-development",
+  "supersedes": "task_family_spec_v003.json",
+  "design_document": "design_v004.md",
+  "confirmatory_items": "jointly_set_with_route_repeats_by_cluster_power_analysis",
+  "public_anchor_items": 40,
+  "minimum_ratings_per_item": {
+    "api": 2,
+    "subagent": 2
+  },
+  "primary_estimand": "target-mix-weighted mean of item-level subagent-subagent minus API-API exact agreement, using all independent within-item coder pairs",
+  "primary_contrast": "SS_minus_AA",
+  "secondary_estimands": [
+    "target-mix-weighted mean of item-level API-subagent minus API-API exact agreement (AS_minus_AA)",
+    "target-mix-weighted mean of the route-shift term AA + SS - 2*AS (route_shift)",
+    "per-route validity rates and agreement conditional on both codings valid"
+  ],
+  "equivalence_margin_absolute_agreement": 0.05,
+  "equivalence_margin_status": "researcher_approved_2026-08-04",
+  "human_adjudication_cap_items": 300,
+  "vendor_pairs": {
+    "anthropic": {
+      "subagent_route": "claude_code_subagent",
+      "subagent_requested_model": "opus",
+      "api_model": "claude-opus-5",
+      "sampling": "provider_defaults_no_overrides"
+    },
+    "openai": {
+      "subagent_route": "codex_subagent",
+      "subagent_requested_model": "gpt-5.6-sol",
+      "api_model": "gpt-5.6-sol",
+      "sampling": "provider_defaults_no_overrides"
+    }
+  },
+  "primary_target_mix": {
+    "opinion_feature_presence": 0.15,
+    "interpretive_move_coding": 0.15,
+    "structured_value_extraction": 0.15,
+    "contract_clause_coding": 0.1,
+    "judicial_document_role": 0.1,
+    "cross_document_relation_coding": 0.1,
+    "statutory_entailment": 0.1,
+    "interpretive_application": 0.15
+  },
+  "families": [
+    {
+      "family_id": "opinion_feature_presence",
+      "methodological_role": "direct_data_generation",
+      "construct": "Code whether a supplied judicial-opinion passage substantively performs a specified legal or interpretive act.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["PRESENT", "ABSENT", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.15,
+      "public_anchor_count": 0,
+      "fresh_method": "Use newly filed opinions or original quote-verifiable passages with positive cases, mentions without analysis, attributed arguments, and true absences.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "interpretive_move_coding",
+      "methodological_role": "direct_data_generation",
+      "construct": "Classify the principal interpretive move made by a supplied opinion passage under a frozen codebook.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["TEXT_ANALYSIS", "PURPOSE_ANALYSIS", "LEGISLATIVE_HISTORY_ANALYSIS", "REPORTING_ONLY", "NO_CODED_MOVE", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.15,
+      "public_anchor_count": 0,
+      "fresh_method": "Use newly filed or original passages representing text, purpose, legislative history, attributed reporting, hard negatives, and codebook edges.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "structured_value_extraction",
+      "methodological_role": "direct_data_generation",
+      "construct": "Extract an expressly stated legal term, date, threshold, actor, amount, count, or other value from supplied text using item-specific closed candidates.",
+      "measurement_level": "nominal",
+      "allowed_label_pattern": "item-specific closed candidate strings plus UNCERTAIN",
+      "gold_status": "objective",
+      "target_proportion": 0.15,
+      "public_anchor_count": 10,
+      "fresh_method": "Use post-cutoff minimized judicial materials and original legal sentences with one explicit target and plausible nearby distractors.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "contract_clause_coding",
+      "methodological_role": "direct_data_generation",
+      "construct": "Code whether a contract clause itself has a specified legal attribute or effect.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["PRESENT", "ABSENT", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.1,
+      "public_anchor_count": 10,
+      "fresh_method": "Use new original clauses or post-cutoff public clauses with positive cases, hard negatives, cross-references, and incomplete excerpts.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "judicial_document_role",
+      "methodological_role": "direct_data_generation",
+      "construct": "Map a judicial filing or excerpt to its functional role in the record.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["PARTY_REQUEST", "EVIDENTIARY_SUPPORT", "PROPOSED_DISPOSITION", "ENTERED_DISPOSITION", "ADMINISTRATIVE_RECORD", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.1,
+      "public_anchor_count": 0,
+      "fresh_method": "Use post-cutoff minimized motions, petitions, declarations, proposed orders, entered orders, and administrative records.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "cross_document_relation_coding",
+      "methodological_role": "direct_data_generation",
+      "construct": "Code whether a specified proposition is consistent across, contradicted by, or unrelated to two supplied judicial documents.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["CONSISTENT", "INCONSISTENT", "NO_RELATION", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.1,
+      "public_anchor_count": 0,
+      "fresh_method": "Use post-cutoff minimized filing packets with pre-adjudicated amount, request/order, allegation/evidence, and disposition relationships.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "statutory_entailment",
+      "methodological_role": "controlled_reasoning",
+      "construct": "Determine whether an assertion follows from a supplied rule and facts.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["ENTAILED", "CONTRADICTED", "UNCERTAIN"],
+      "gold_status": "objective",
+      "target_proportion": 0.1,
+      "public_anchor_count": 10,
+      "fresh_method": "Instantiate new names, dates, thresholds, exceptions, and assertions from executable rule templates.",
+      "evidence_required": true
+    },
+    {
+      "family_id": "interpretive_application",
+      "methodological_role": "subjective_stress_test",
+      "construct": "Apply a supplied rule to facts where ordinary meaning and stated purpose may align or conflict.",
+      "measurement_level": "nominal",
+      "allowed_labels": ["APPLIES", "DOES_NOT_APPLY", "GENUINELY_AMBIGUOUS", "UNCERTAIN"],
+      "gold_status": "none_subjective",
+      "target_proportion": 0.15,
+      "public_anchor_count": 10,
+      "fresh_method": "Use familiar structures only as contamination sentinels; write new surface domains and vocabulary for confirmatory items.",
+      "evidence_required": true
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/elr/intercoder-task-v004.schema.json",
+  "type": "object",
+  "required": [
+    "item_id",
+    "item_version",
+    "benchmark_phase",
+    "family_id",
+    "source_tier",
+    "contamination_risk",
+    "dependence_cluster_id",
+    "twin_set_id",
+    "provenance",
+    "prompt",
+    "adjudication"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,79}$"
+    },
+    "item_version": {
+      "enum": [
+        "0.3-development",
+        "0.4-development"
+      ]
+    },
+    "benchmark_phase": {
+      "enum": [
+        "development_only",
+        "public_anchor",
+        "confirmatory_fresh"
+      ]
+    },
+    "family_id": {
+      "enum": [
+        "opinion_feature_presence",
+        "interpretive_move_coding",
+        "structured_value_extraction",
+        "contract_clause_coding",
+        "judicial_document_role",
+        "cross_document_relation_coding",
+        "statutory_entailment",
+        "interpretive_application"
+      ]
+    },
+    "source_tier": {
+      "enum": [
+        "public_exact",
+        "public_paraphrase",
+        "public_recent_minimized",
+        "synthetic_original",
+        "synthetic_structural_twin"
+      ]
+    },
+    "contamination_risk": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "dependence_cluster_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "twin_set_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_locator",
+        "material_ids",
+        "authoring_note",
+        "human_review_status",
+        "external_api_eligible"
+      ],
+      "properties": {
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "material_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "authoring_note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 750
+        },
+        "human_review_status": {
+          "enum": [
+            "not_applicable_public_or_synthetic",
+            "pending_researcher",
+            "approved_by_researcher"
+          ]
+        },
+        "external_api_eligible": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "prompt": {
+      "type": "object",
+      "required": [
+        "instruction",
+        "materials",
+        "question"
+      ],
+      "properties": {
+        "instruction": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1500
+        },
+        "materials": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "kind",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_-]{0,19}$"
+              },
+              "kind": {
+                "enum": [
+                  "rule",
+                  "purpose",
+                  "facts",
+                  "clause",
+                  "sentence",
+                  "candidate",
+                  "opinion_passage",
+                  "record_description",
+                  "motion_excerpt",
+                  "petition_excerpt",
+                  "affidavit_excerpt",
+                  "proposed_order_excerpt",
+                  "entered_order_excerpt"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "allowed_labels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "response_mode": {
+          "enum": [
+            "closed",
+            "free_text"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "adjudication": {
+      "type": "object",
+      "required": [
+        "gold_status",
+        "gold_label",
+        "rationale"
+      ],
+      "properties": {
+        "gold_status": {
+          "enum": [
+            "deterministic",
+            "source_gold",
+            "none_subjective"
+          ]
+        },
+        "gold_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "answer_key": {
+          "type": "object",
+          "required": [
+            "normalizer",
+            "gold_answer",
+            "aliases"
+          ],
+          "properties": {
+            "normalizer": {
+              "enum": [
+                "money",
+                "number",
+                "percent",
+                "date",
+                "duration",
+                "string",
+                "citation"
+              ]
+            },
+            "gold_answer": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 120
+            },
+            "aliases": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "maxLength": 120
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

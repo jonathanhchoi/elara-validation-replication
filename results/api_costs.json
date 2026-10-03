@@ -1,0 +1,38 @@
+[
+  {
+    "run_id": "diversity_interpretive_anthropic_v001",
+    "vendor": "anthropic",
+    "archived_files": 2802,
+    "api_attempts": 616,
+    "api_attempts_with_usage": 613,
+    "api_attempts_without_usage": 3,
+    "api_cost_usd": 22.763070000000003
+  },
+  {
+    "run_id": "diversity_interpretive_openai_v001",
+    "vendor": "openai",
+    "archived_files": 2716,
+    "api_attempts": 541,
+    "api_attempts_with_usage": 541,
+    "api_attempts_without_usage": 0,
+    "api_cost_usd": 8.160528
+  },
+  {
+    "run_id": "diversity_objective_anthropic_v001",
+    "vendor": "anthropic",
+    "archived_files": 2587,
+    "api_attempts": 529,
+    "api_attempts_with_usage": 529,
+    "api_attempts_without_usage": 0,
+    "api_cost_usd": 13.732894999999994
+  },
+  {
+    "run_id": "diversity_objective_openai_v001",
+    "vendor": "openai",
+    "archived_files": 2575,
+    "api_attempts": 512,
+    "api_attempts_with_usage": 512,
+    "api_attempts_without_usage": 0,
+    "api_cost_usd": 6.977029500000001
+  }
+]

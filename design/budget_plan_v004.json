@@ -1,0 +1,93 @@
+{
+  "plan_version": "0.4-draft",
+  "supersedes": "budget_plan_v003.json",
+  "design_document": "design_v004.md (Amendment A2 pending) and diversity_expansion_proposal_v001.md",
+  "status": "draft_pending_researcher_approval_2026-08-11",
+  "overall_envelope_usd": 1000.0,
+  "price_assumptions": {
+    "anthropic_claude-opus-5": {
+      "input_usd_per_million_tokens": 5.0,
+      "output_usd_per_million_tokens": 25.0,
+      "source": "Anthropic first-party API price list, cached 2026-06-24; realized intensive-pilot unit cost ~$0.0254 per API coding",
+      "reverify_before": "diversity_runs"
+    },
+    "openai_gpt-5.6-sol": {
+      "input_usd_per_million_tokens": 5.0,
+      "cached_input_usd_per_million_tokens": 0.5,
+      "output_usd_per_million_tokens": 30.0,
+      "source": "statutory-interpretation-equivalence config snapshot 2026-07-30; re-verified 2026-08-04 (unchanged); realized intensive-pilot unit cost ~$0.0093 per API coding",
+      "reverify_before": "diversity_runs"
+    },
+    "subagent_route": "subscription_usage_not_per_token_metered; record wall-clock and attempt counts instead",
+    "note_r3": "r3 chunk materials roughly double average input tokens for the extraction and contract families; projected API costs remain far below stage ceilings."
+  },
+  "stages": [
+    {
+      "stage_id": "instrument_pilot",
+      "status": "completed_2026-08-05_both_pairs",
+      "items": 27,
+      "codings_per_route_per_pair": 2,
+      "stage_ceiling_usd": 25.0,
+      "maximum_cumulative_spend_usd": 50.0
+    },
+    {
+      "stage_id": "intensive_pilot",
+      "status": "completed_2026-08-07_both_pairs",
+      "items": 33,
+      "codings_per_route_per_pair": 12,
+      "stage_ceiling_usd": 100.0,
+      "maximum_cumulative_spend_usd": 150.0
+    },
+    {
+      "stage_id": "diversity_pilot",
+      "items": "300 unique (255 objective panel + 45 interpretive panel; two sealed runs per vendor pair)",
+      "codings_per_route_per_pair": "objective run: 2; interpretive run: 12",
+      "planned_api_calls_per_pair": 1050,
+      "runs": [
+        {
+          "run": "diversity_objective",
+          "items_file": "diversity_objective_panel_v003.jsonl",
+          "envelopes_file": "diversity_objective_envelopes_v003.jsonl",
+          "items": 255,
+          "reps_per_route": 2,
+          "blocks": 10,
+          "seed": 20260812,
+          "analysis": "analyze_normalized_v001.py (free-text canonicalization, then frozen v0.04 analysis)"
+        },
+        {
+          "run": "diversity_interpretive",
+          "items_file": "diversity_interpretive_panel_v001.jsonl",
+          "envelopes_file": "diversity_interpretive_envelopes_v002.jsonl",
+          "items": 45,
+          "reps_per_route": 12,
+          "blocks": 8,
+          "seed": 20260813,
+          "analysis": "launcher analyze subcommand (closed labels only)"
+        }
+      ],
+      "projected_api_cost_usd": {
+        "anthropic": 27.0,
+        "openai": 11.0
+      },
+      "stage_ceiling_usd": 120.0,
+      "maximum_cumulative_spend_usd": 270.0,
+      "gate": "Researcher audit of diversity_panel_review_v003.md complete; panel, envelope, and instrument v0.4 hashes pinned in the runbook handoff; pasting a diversity runbook handoff prompt constitutes approval of this plan version and Amendment A2."
+    },
+    {
+      "stage_id": "confirmatory",
+      "items": "set_by_frozen_power_simulation",
+      "codings_per_route_per_pair": "set_by_frozen_power_simulation",
+      "stage_ceiling_usd": 730.0,
+      "maximum_cumulative_spend_usd": 1000.0,
+      "gate": "Task mix, margins, power (simulation fed by diversity-stage variance estimates), model configuration, privacy route, hashes, human-adjudication cap (300 items), and projected cost approved and frozen; preregistration filed."
+    }
+  ],
+  "automatic_stop_rules": [
+    "Refuse to start a block if projected cumulative spend exceeds the active stage ceiling.",
+    "Abort mid-block if realized cumulative spend crosses the active stage ceiling.",
+    "Stop at the next checkpoint on requested/reported model drift.",
+    "Stop the run for diagnosis if more than 25% of a block's attempts terminally fail.",
+    "Never add items or repeats after a route contrast has been observed; unused pilot budget cannot fund extra confirmatory observations."
+  ],
+  "enforcement": "run_route_comparison.py reads this file and enforces the active stage ceiling and stop rules mechanically; the ceilings meter API-route token spend, and the sub-agent route is tracked by attempt count and wall-clock."
+}

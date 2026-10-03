@@ -1,0 +1,420 @@
+[
+  {
+    "path": "data/objective_items.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_objective_panel_v003.jsonl",
+    "source_sha256": "9c6a55e864a76fbc821a042b714666bb4282393f28a0a236c1498c9120b7ae86",
+    "published_sha256": "26a23e8a3a67c0990cf85b84ec055e27e5994d4ba943cf5293c518b60d2840fe",
+    "bytes": 621038,
+    "redactions": [
+      {
+        "replacement": "[personal phone number removed]",
+        "occurrences": 1
+      },
+      {
+        "replacement": "[residential street address removed]",
+        "occurrences": 4
+      }
+    ]
+  },
+  {
+    "path": "data/interpretive_items.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_interpretive_panel_v001.jsonl",
+    "source_sha256": "26d0ddca53758c8eabf9b7992e49c47f2ac185a794399d405fe508e6e954570d",
+    "published_sha256": "26d0ddca53758c8eabf9b7992e49c47f2ac185a794399d405fe508e6e954570d",
+    "bytes": 67829,
+    "redactions": []
+  },
+  {
+    "path": "data/objective_prompts.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_objective_envelopes_v003.jsonl",
+    "source_sha256": "262ce4433f2a6c7d32c10b9b91a4252724cc0600bb725c031af4707210fe7c5b",
+    "published_sha256": "b3cdc2b3945436ceaaae4d49fee08a360c1ecd7b114b66e7f62ab25794eddf29",
+    "bytes": 3053718,
+    "redactions": [
+      {
+        "replacement": "[personal phone number removed]",
+        "occurrences": 1
+      },
+      {
+        "replacement": "[residential street address removed]",
+        "occurrences": 4
+      }
+    ]
+  },
+  {
+    "path": "data/interpretive_prompts.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_interpretive_envelopes_v002.jsonl",
+    "source_sha256": "b8b54b28d4a791141db0c4c60e9e8093c22d90168a836bbda9e467bb9cf2f3ec",
+    "published_sha256": "b8b54b28d4a791141db0c4c60e9e8093c22d90168a836bbda9e467bb9cf2f3ec",
+    "bytes": 509493,
+    "redactions": []
+  },
+  {
+    "path": "code/agreement_analysis_v004.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/agreement_analysis_v004.py",
+    "source_sha256": "ee667b4836947d6bf514baea9d94ed62696deb7ffc9ed0f25f5931d2d00f45fa",
+    "published_sha256": "ee667b4836947d6bf514baea9d94ed62696deb7ffc9ed0f25f5931d2d00f45fa",
+    "bytes": 25045,
+    "redactions": []
+  },
+  {
+    "path": "code/cluster_bootstrap_v001.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/cluster_bootstrap_v001.py",
+    "source_sha256": "84e0a909aa94269b5c07a7264601ab2b7b1b3042fc7cd4f74d5e1a355ede8b81",
+    "published_sha256": "84e0a909aa94269b5c07a7264601ab2b7b1b3042fc7cd4f74d5e1a355ede8b81",
+    "bytes": 54997,
+    "redactions": []
+  },
+  {
+    "path": "code/answer_equivalence_v001.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/answer_equivalence_v001.py",
+    "source_sha256": "d3e60cae51b498d05b55b878f013f4629c36d02f473bc68db01e7e25644a4567",
+    "published_sha256": "d3e60cae51b498d05b55b878f013f4629c36d02f473bc68db01e7e25644a4567",
+    "bytes": 11661,
+    "redactions": []
+  },
+  {
+    "path": "code/normalize_ratings_v001.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/normalize_ratings_v001.py",
+    "source_sha256": "175690050435eca900bd4b8acad9f81f4fa7c2d0403a37f2d38d876cdbfa660f",
+    "published_sha256": "175690050435eca900bd4b8acad9f81f4fa7c2d0403a37f2d38d876cdbfa660f",
+    "bytes": 5215,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/run_route_comparison.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/run_route_comparison.py",
+    "source_sha256": "b7ae3c626ec0ebd8df86ee156ee0b74b63f043dc3b160a15afa33d3b8196744c",
+    "published_sha256": "b7ae3c626ec0ebd8df86ee156ee0b74b63f043dc3b160a15afa33d3b8196744c",
+    "bytes": 79590,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/analyze_normalized_v001.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/analyze_normalized_v001.py",
+    "source_sha256": "be1acaa5a9bb47e898fbb7705138e93f23aa887b05740c63c722987b458a8896",
+    "published_sha256": "be1acaa5a9bb47e898fbb7705138e93f23aa887b05740c63c722987b458a8896",
+    "bytes": 8557,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/build_prompt_envelopes_v004.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/build_prompt_envelopes_v004.py",
+    "source_sha256": "aa78f493fb6253afde39eb3da75f562bac5b85800e676c822739d4eab79bee81",
+    "published_sha256": "aa78f493fb6253afde39eb3da75f562bac5b85800e676c822739d4eab79bee81",
+    "bytes": 7485,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/build_diversity_envelopes_v002.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/build_diversity_envelopes_v002.py",
+    "source_sha256": "9c728e7d916225e5cf6b0bc0057b57ffc4fc2b333fcb879ec707d7c15a2af300",
+    "published_sha256": "9c728e7d916225e5cf6b0bc0057b57ffc4fc2b333fcb879ec707d7c15a2af300",
+    "bytes": 6004,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/build_diversity_panels_v003.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/build_diversity_panels_v003.py",
+    "source_sha256": "58817bfe7fda99f3a7a2f6fb123d0935a71d545e8c6d12aa1836e68b0ec50f97",
+    "published_sha256": "58817bfe7fda99f3a7a2f6fb123d0935a71d545e8c6d12aa1836e68b0ec50f97",
+    "bytes": 15808,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/build_diversity_panels_v002.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/build_diversity_panels_v002.py",
+    "source_sha256": "6c08776e3bbb54af0ecef2d4bd59037a7c44cdafc22f43b78891a9856049ebb2",
+    "published_sha256": "6c08776e3bbb54af0ecef2d4bd59037a7c44cdafc22f43b78891a9856049ebb2",
+    "bytes": 15398,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/build_diversity_panels_v001.py",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/build_diversity_panels_v001.py",
+    "source_sha256": "01911a09b1dbc7065923f3414d649cb3b5f39a37b44175d344c67dd5ad286d61",
+    "published_sha256": "01911a09b1dbc7065923f3414d649cb3b5f39a37b44175d344c67dd5ad286d61",
+    "bytes": 14716,
+    "redactions": []
+  },
+  {
+    "path": "code/historical/unit_fanout.py",
+    "source": "empirical-legal-research-kit/scripts/unit_fanout.py",
+    "source_sha256": "2cef949d5c735a89b5a510afff98ad527c7b6bd58d92431923ebff075c106fc4",
+    "published_sha256": "2cef949d5c735a89b5a510afff98ad527c7b6bd58d92431923ebff075c106fc4",
+    "bytes": 32621,
+    "redactions": []
+  },
+  {
+    "path": "design/design_v004.md",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/design_v004.md",
+    "source_sha256": "c5d98bc92e3fd6b5a01dd326e410e8338ec7aa0513584d0fa1ab4c819345fa2f",
+    "published_sha256": "c5d98bc92e3fd6b5a01dd326e410e8338ec7aa0513584d0fa1ab4c819345fa2f",
+    "bytes": 16784,
+    "redactions": []
+  },
+  {
+    "path": "design/codebook_v004.md",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/codebook_v004.md",
+    "source_sha256": "d5d04f1da33e4dd8fb7d9ec9fb7754c363e0a7aff1b4a2799dfef6780a5aa940",
+    "published_sha256": "d5d04f1da33e4dd8fb7d9ec9fb7754c363e0a7aff1b4a2799dfef6780a5aa940",
+    "bytes": 8095,
+    "redactions": []
+  },
+  {
+    "path": "design/task_family_spec_v004.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/task_family_spec_v004.json",
+    "source_sha256": "9a3dafd574933c5671dad16b3974cd47cfc1941191d1c5fc20c4f97e8c8eb656",
+    "published_sha256": "9a3dafd574933c5671dad16b3974cd47cfc1941191d1c5fc20c4f97e8c8eb656",
+    "bytes": 6982,
+    "redactions": []
+  },
+  {
+    "path": "design/task_schema_v004.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/task_schema_v004.json",
+    "source_sha256": "f85414dbbb99392ccb8a7af789a1fc4b577c222981e6500e61a9b5e06f342869",
+    "published_sha256": "f85414dbbb99392ccb8a7af789a1fc4b577c222981e6500e61a9b5e06f342869",
+    "bytes": 6554,
+    "redactions": []
+  },
+  {
+    "path": "design/response_schema_v001.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/response_schema_v001.json",
+    "source_sha256": "b48e207655d837289c7a883d61e59305d1ee0f434e45f65f5809e671247fb52a",
+    "published_sha256": "b48e207655d837289c7a883d61e59305d1ee0f434e45f65f5809e671247fb52a",
+    "bytes": 778,
+    "redactions": []
+  },
+  {
+    "path": "design/rating_record_schema_v002.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/rating_record_schema_v002.json",
+    "source_sha256": "b7d50d92debbef5c69174057b804d9c629c78302e1627814247e6e462ec9b200",
+    "published_sha256": "b7d50d92debbef5c69174057b804d9c629c78302e1627814247e6e462ec9b200",
+    "bytes": 2525,
+    "redactions": []
+  },
+  {
+    "path": "design/budget_plan_v004.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/budget_plan_v004.json",
+    "source_sha256": "9962c20d73ac2b27f0340ce2f7e83e5bedddf99c8c8bc0f981d81e14a15d0988",
+    "published_sha256": "9962c20d73ac2b27f0340ce2f7e83e5bedddf99c8c8bc0f981d81e14a15d0988",
+    "bytes": 4628,
+    "redactions": []
+  },
+  {
+    "path": "design/diversity_expansion_proposal_v001.md",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_expansion_proposal_v001.md",
+    "source_sha256": "a152b77d92a4225450f7637bf0cb63d5c09e2c44c5adc343a88bd5926826fe83",
+    "published_sha256": "a152b77d92a4225450f7637bf0cb63d5c09e2c44c5adc343a88bd5926826fe83",
+    "bytes": 22467,
+    "redactions": []
+  },
+  {
+    "path": "design/diversity_runbook_openai_v001.md",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_runbook_openai_v001.md",
+    "source_sha256": "78d44195ce0c1d16344205e6e8a34d5ddbd9d313266d505719b7116f99ca91a4",
+    "published_sha256": "78d44195ce0c1d16344205e6e8a34d5ddbd9d313266d505719b7116f99ca91a4",
+    "bytes": 10838,
+    "redactions": []
+  },
+  {
+    "path": "design/diversity_runbook_anthropic_v001.md",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/diversity_runbook_anthropic_v001.md",
+    "source_sha256": "cd2b5fee91f6496cdb639a4c2ca0d0da25c127ac4219d75bf05df6d1d2e00a7c",
+    "published_sha256": "cd2b5fee91f6496cdb639a4c2ca0d0da25c127ac4219d75bf05df6d1d2e00a7c",
+    "bytes": 10761,
+    "redactions": []
+  },
+  {
+    "path": "LICENSE",
+    "source": "empirical-legal-research-kit/LICENSE",
+    "source_sha256": "a21f3a3416c4d9bc5a7358a4ba91d823c278c92000f29d8f1cb2c806344ffc04",
+    "published_sha256": "a21f3a3416c4d9bc5a7358a4ba91d823c278c92000f29d8f1cb2c806344ffc04",
+    "bytes": 1073,
+    "redactions": []
+  },
+  {
+    "path": "preregistration/preregistration_subagent_study.tex",
+    "source": "preregistration_subagent_study.tex",
+    "source_sha256": "cca00fdcc05d8ac177111ae179be4ce20343551ac1c2b2767209616baaeece6c",
+    "published_sha256": "cca00fdcc05d8ac177111ae179be4ce20343551ac1c2b2767209616baaeece6c",
+    "bytes": 7786,
+    "redactions": []
+  },
+  {
+    "path": "preregistration/preregistration_subagent_study.pdf",
+    "source": "preregistration_subagent_study.pdf",
+    "source_sha256": "8b13865c64b42b218b9945ba4e29e023f5815efaff80c884cd85c636b703c3d6",
+    "published_sha256": "8b13865c64b42b218b9945ba4e29e023f5815efaff80c884cd85c636b703c3d6",
+    "bytes": 163241,
+    "redactions": []
+  },
+  {
+    "path": "provenance/clark_authorization_v001.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/sources/clark_county_pilot_v001/authorization_v001.json",
+    "source_sha256": "ce0ca89fd472c8f610b2644df83fa096214732fe3e6cd834a3f04a4a7d82c5a5",
+    "published_sha256": "ce0ca89fd472c8f610b2644df83fa096214732fe3e6cd834a3f04a4a7d82c5a5",
+    "bytes": 1032,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_anthropic_v001/rating_records.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_anthropic_v001/rating_records.jsonl",
+    "source_sha256": "0ec8017725657b5002eacf79741995b7fb16deb1eb7742306470110605b22a08",
+    "published_sha256": "0ec8017725657b5002eacf79741995b7fb16deb1eb7742306470110605b22a08",
+    "bytes": 1419016,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_anthropic_v001/reported_analysis.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_anthropic_v001/analysis_v001.json",
+    "source_sha256": "c8cee775de51620ef5669ec5fb63d913024937c3fafd05149f33152ce0da4483",
+    "published_sha256": "c8cee775de51620ef5669ec5fb63d913024937c3fafd05149f33152ce0da4483",
+    "bytes": 44479,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_anthropic_v001/original_config.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_anthropic_v001/config.json",
+    "source_sha256": "d720eec5b8a52dc4c4d559263be57b50d8e42edd25382db7c3036b23dc988453",
+    "published_sha256": "d720eec5b8a52dc4c4d559263be57b50d8e42edd25382db7c3036b23dc988453",
+    "bytes": 1928,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_anthropic_v001/original_merge_receipt.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_anthropic_v001/merge_receipt.json",
+    "source_sha256": "53bfea5a0b914f24516124a9154676092d3915d5c00018cee19f6cee598beeb1",
+    "published_sha256": "53bfea5a0b914f24516124a9154676092d3915d5c00018cee19f6cee598beeb1",
+    "bytes": 128211,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_anthropic_v001/schedule.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_anthropic_v001/schedule.jsonl",
+    "source_sha256": "d4dd9929097fd8e89ab82724595cfa4bf8fdffa26bb877b7e359fd3af51e95b8",
+    "published_sha256": "d4dd9929097fd8e89ab82724595cfa4bf8fdffa26bb877b7e359fd3af51e95b8",
+    "bytes": 186216,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_openai_v001/rating_records.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_openai_v001/rating_records.jsonl",
+    "source_sha256": "e6f4f02fa37d835a7200e7c675bf2ddd17e7a8f25be52e638ac7f9cd65147953",
+    "published_sha256": "e6f4f02fa37d835a7200e7c675bf2ddd17e7a8f25be52e638ac7f9cd65147953",
+    "bytes": 1188591,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_openai_v001/reported_analysis.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_openai_v001/analysis_v001.json",
+    "source_sha256": "b2df5c30a65a077059b25b2f01f26d4ae67afc58707d1365d0ef4eb776dad1ac",
+    "published_sha256": "b2df5c30a65a077059b25b2f01f26d4ae67afc58707d1365d0ef4eb776dad1ac",
+    "bytes": 43497,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_openai_v001/original_config.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_openai_v001/config.json",
+    "source_sha256": "2dccae61a4569fdc1a8a72f9bf9111787c10b2126db43b9000e34dca9e151cec",
+    "published_sha256": "2dccae61a4569fdc1a8a72f9bf9111787c10b2126db43b9000e34dca9e151cec",
+    "bytes": 1919,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_openai_v001/original_merge_receipt.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_openai_v001/merge_receipt.json",
+    "source_sha256": "b5bf982c8d62cddba1567768a1d9ae1e9e65e140dc546497ffa8b173b1905060",
+    "published_sha256": "b5bf982c8d62cddba1567768a1d9ae1e9e65e140dc546497ffa8b173b1905060",
+    "bytes": 124887,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_interpretive_openai_v001/schedule.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_interpretive_openai_v001/schedule.jsonl",
+    "source_sha256": "c3d473994c5578756b2b61fbd034a484ca8707af6285c0bef3156af7199f51fb",
+    "published_sha256": "c3d473994c5578756b2b61fbd034a484ca8707af6285c0bef3156af7199f51fb",
+    "bytes": 179736,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_anthropic_v001/rating_records.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_anthropic_v001/rating_records.jsonl",
+    "source_sha256": "23bfba16de980098933e0dab46eafa414759c25d53081b7ae15b0fd725953562",
+    "published_sha256": "23bfba16de980098933e0dab46eafa414759c25d53081b7ae15b0fd725953562",
+    "bytes": 1236717,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_anthropic_v001/reported_analysis.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_anthropic_v001/analysis_v001.json",
+    "source_sha256": "dd87d211c44c6e52e8362d543acb8ab86786f02e416cf8b50c389024c29e1b4f",
+    "published_sha256": "dd87d211c44c6e52e8362d543acb8ab86786f02e416cf8b50c389024c29e1b4f",
+    "bytes": 184607,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_anthropic_v001/original_config.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_anthropic_v001/config.json",
+    "source_sha256": "83ae1de0c85d880abcd2f0956eb0f9a90fb9518ff20d6bd6f2e4e7d250def5c9",
+    "published_sha256": "83ae1de0c85d880abcd2f0956eb0f9a90fb9518ff20d6bd6f2e4e7d250def5c9",
+    "bytes": 4916,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_anthropic_v001/original_merge_receipt.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_anthropic_v001/merge_receipt.json",
+    "source_sha256": "3d84a17ce0515da4e27ab3dfe2af369703c5b5a4fbf422249afe5ec40c786bf7",
+    "published_sha256": "3d84a17ce0515da4e27ab3dfe2af369703c5b5a4fbf422249afe5ec40c786bf7",
+    "bytes": 114087,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_anthropic_v001/schedule.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_anthropic_v001/schedule.jsonl",
+    "source_sha256": "1f2530e7c15353f9739a48ba5997a19cf1d3967ad18df37e1c5ca3d3d8284936",
+    "published_sha256": "1f2530e7c15353f9739a48ba5997a19cf1d3967ad18df37e1c5ca3d3d8284936",
+    "bytes": 161594,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_openai_v001/rating_records.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_openai_v001/rating_records.jsonl",
+    "source_sha256": "a2350277ec87e9d2e965afa4de01b83f01a87d7d6216b05fae48b932df0c8ebb",
+    "published_sha256": "a2350277ec87e9d2e965afa4de01b83f01a87d7d6216b05fae48b932df0c8ebb",
+    "bytes": 1034693,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_openai_v001/reported_analysis.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_openai_v001/analysis_v001.json",
+    "source_sha256": "932bfefadb6025a7f8cea420eb562ef4766fbfc2a1ae39bac41c64a3152cfee3",
+    "published_sha256": "932bfefadb6025a7f8cea420eb562ef4766fbfc2a1ae39bac41c64a3152cfee3",
+    "bytes": 184770,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_openai_v001/original_config.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_openai_v001/config.json",
+    "source_sha256": "11d0fd260199cc29a71c71279569bbf10ce871532908feec8e509ffd34a61c19",
+    "published_sha256": "11d0fd260199cc29a71c71279569bbf10ce871532908feec8e509ffd34a61c19",
+    "bytes": 4907,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_openai_v001/original_merge_receipt.json",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_openai_v001/merge_receipt.json",
+    "source_sha256": "c17d73488a362c91c54f7fef995a2ba0b78805358a21607ea17130f3561ce930",
+    "published_sha256": "c17d73488a362c91c54f7fef995a2ba0b78805358a21607ea17130f3561ce930",
+    "bytes": 110998,
+    "redactions": []
+  },
+  {
+    "path": "runs/diversity_objective_openai_v001/schedule.jsonl",
+    "source": "empirical-legal-research-kit/benchmarks/intercoder-route-agreement/runs/diversity_objective_openai_v001/schedule.jsonl",
+    "source_sha256": "4e69ccf49ebe47ec15181c18b7f667bf9fa08963153c81d57bd572df408a8b44",
+    "published_sha256": "4e69ccf49ebe47ec15181c18b7f667bf9fa08963153c81d57bd572df408a8b44",
+    "bytes": 155474,
+    "redactions": []
+  }
+]

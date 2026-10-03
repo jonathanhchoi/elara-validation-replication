@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper and this replication repository."
+title: "ELARA validation study replication materials"
+type: dataset
+authors:
+  - family-names: Choi
+    given-names: Jonathan H.
+    affiliation: Washington University School of Law
+version: 1.0.0
+date-released: 2026-10-03
+url: "https://github.com/jonathanhchoi/elara-validation-replication"
+repository-code: "https://github.com/jonathanhchoi/elara-validation-replication"
+abstract: "Task materials, prompts, archived codings, run provenance, and offline analysis for the validation study in ELARA: A Framework for Empirical Legal Research with AI Agents."

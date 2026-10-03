@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/elr/intercoder-response-v001.schema.json",
+  "type": "object",
+  "required": [
+    "item_id",
+    "label",
+    "evidence_ids",
+    "rationale"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,79}$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "evidence_ids": {
+      "type": "array",
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9_-]{0,19}$"
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,41 @@
+{
+  "authorized_restricted_items": {},
+  "blocks": 8,
+  "budget_plan": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\budget_plan_v004.json",
+    "sha256": "9962c20d73ac2b27f0340ce2f7e83e5bedddf99c8c8bc0f981d81e14a15d0988"
+  },
+  "comparison": "openai",
+  "design_spec": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\task_family_spec_v004.json",
+    "sha256": "9a3dafd574933c5671dad16b3974cd47cfc1941191d1c5fc20c4f97e8c8eb656"
+  },
+  "envelopes": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\diversity_interpretive_envelopes_v002.jsonl",
+    "sha256": "b8b54b28d4a791141db0c4c60e9e8093c22d90168a836bbda9e467bb9cf2f3ec"
+  },
+  "est_input_tokens": 3000,
+  "est_output_tokens": 600,
+  "items": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\diversity_interpretive_panel_v001.jsonl",
+    "sha256": "26d0ddca53758c8eabf9b7992e49c47f2ac185a794399d405fe508e6e954570d"
+  },
+  "models": {
+    "api_model": "gpt-5.6-sol",
+    "subagent_requested_model": "gpt-5.6-sol",
+    "subagent_route": "codex_subagent"
+  },
+  "price_key": "openai_gpt-5.6-sol",
+  "rating_schema": {
+    "path": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\rating_record_schema_v002.json",
+    "sha256": "b7d50d92debbef5c69174057b804d9c629c78302e1627814247e6e462ec9b200"
+  },
+  "reasoning_effort": "high",
+  "reps": {
+    "api": 12,
+    "subagent": 12
+  },
+  "seed": 20260813,
+  "sources_root": "G:\\My Drive\\Colab Notebooks\\jlea_methods\\empirical-legal-research-kit\\benchmarks\\intercoder-route-agreement\\sources",
+  "stage": "diversity_pilot"
+}
